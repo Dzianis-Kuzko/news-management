@@ -1,0 +1,52 @@
+package com.ecsat.news_management.api.controllers;
+
+import com.ecsat.news_management.api.dto.news.NewsDTO;
+import com.ecsat.news_management.api.dto.news.NewsWithCommentsDTO;
+import com.ecsat.news_management.api.dto.news.SaveNewsDTO;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@RestController
+@RequestMapping("/news")
+public class NewsController {
+
+    @GetMapping("/{newsId}")
+    public NewsDTO get(@PathVariable int newsId) {
+        return new NewsDTO();
+    }
+
+    @PostMapping
+    public NewsDTO create(@RequestBody SaveNewsDTO saveNewsDTO) {
+        return new NewsDTO();
+    }
+
+    @PutMapping("/{newsId}")
+    public NewsDTO update(@PathVariable int newsID,
+                          @RequestBody SaveNewsDTO saveNewsDTO) {
+        return new NewsDTO();
+    }
+
+    @DeleteMapping("/{newsId}")
+    public void delete(@PathVariable int newsID) {
+
+    }
+
+    @GetMapping
+    public List<NewsDTO> getAll() {
+        return new ArrayList<>();
+    }
+
+    @GetMapping("/{newsId}")
+    public NewsWithCommentsDTO getNewsWithComments(@PathVariable int newsId) {
+        return new NewsWithCommentsDTO();
+    }
+}
