@@ -1,7 +1,8 @@
 package com.ecsat.news_management.api.controllers;
 
-import com.ecsat.news_management.api.dto.NewsDTO;
-import com.ecsat.news_management.api.dto.SaveNewsDTO;
+import com.ecsat.news_management.api.dto.news.NewsDTO;
+import com.ecsat.news_management.api.dto.news.NewsWithCommentsDTO;
+import com.ecsat.news_management.api.dto.news.SaveNewsDTO;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -42,5 +43,10 @@ public class NewsController {
     @GetMapping
     public List<NewsDTO> getAll() {
         return new ArrayList<>();
+    }
+
+    @GetMapping("/{newsId}")
+    public NewsWithCommentsDTO getNewsWithComments(@PathVariable int newsId) {
+        return new NewsWithCommentsDTO();
     }
 }
