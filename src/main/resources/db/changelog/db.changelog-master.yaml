@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: D. Kuzko
+      changes:
+        - sqlFile:
+            path: db/sql/create_tables.sql
+            splitStatements: true
+            stripComments: true

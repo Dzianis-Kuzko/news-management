@@ -1,6 +1,5 @@
-package com.ecsat.news_management.api.dto;
+package com.ecsat.news_management.api.dto.news;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,4 +12,5 @@ public class NewsDTO {
     private LocalDateTime time;
     private String title;
     private String text;
+
 }
