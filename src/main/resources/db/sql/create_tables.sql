@@ -8,10 +8,10 @@ CREATE TABLE IF NOT EXISTS news
 
 CREATE TABLE IF NOT EXISTS comment
 (
-    id       SERIAL PRIMARY KEY,
-    time     TIMESTAMP NOT NULL,
-    text     TEXT      NOT NULL,
-    username TEXT      NOT NULL,
-    news_id  INTEGER   NOT NULL,
+    id        SERIAL PRIMARY KEY,
+    time      TIMESTAMP NOT NULL,
+    text      TEXT      NOT NULL,
+    user_name TEXT      NOT NULL,
+    news_id   INTEGER   NOT NULL,
     FOREIGN KEY (news_id) REFERENCES news (id)
 );

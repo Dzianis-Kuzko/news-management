@@ -10,7 +10,7 @@ import java.util.List;
 @Getter
 @Setter
 public class NewsWithCommentsDTO {
-    private int id;
+    private Integer id;
     private LocalDateTime time;
     private String title;
     private String text;

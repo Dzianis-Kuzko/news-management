@@ -11,5 +11,5 @@ public class SaveCommentDTO {
     private LocalDateTime time;
     private String text;
     private String userName;
-    private int newsId;
+    private Integer newsId;
 }

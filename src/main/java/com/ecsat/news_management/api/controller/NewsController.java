@@ -1,8 +1,10 @@
-package com.ecsat.news_management.api.controllers;
+package com.ecsat.news_management.api.controller;
 
 import com.ecsat.news_management.api.dto.news.NewsDTO;
 import com.ecsat.news_management.api.dto.news.NewsWithCommentsDTO;
 import com.ecsat.news_management.api.dto.news.SaveNewsDTO;
+import com.ecsat.news_management.core.service.NewsService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,11 +19,13 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/news")
+@RequiredArgsConstructor
 public class NewsController {
+    private final NewsService newsService;
 
     @GetMapping("/{newsId}")
     public NewsDTO get(@PathVariable int newsId) {
-        return new NewsDTO();
+        return newsService.get(newsId);
     }
 
     @PostMapping
@@ -45,7 +49,7 @@ public class NewsController {
         return new ArrayList<>();
     }
 
-    @GetMapping("/{newsId}")
+    @GetMapping("/{newsId}/comments")
     public NewsWithCommentsDTO getNewsWithComments(@PathVariable int newsId) {
         return new NewsWithCommentsDTO();
     }

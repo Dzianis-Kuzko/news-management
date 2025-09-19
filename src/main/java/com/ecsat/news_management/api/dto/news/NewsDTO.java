@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 public class NewsDTO {
-    private int id;
+    private Integer id;
     private LocalDateTime time;
     private String title;
     private String text;

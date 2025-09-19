@@ -7,3 +7,12 @@ databaseChangeLog:
             path: db/sql/create_tables.sql
             splitStatements: true
             stripComments: true
+
+  - changeSet:
+      id: 2
+      author: D. Kuzko
+      changes:
+        - sqlFile:
+            path: db/sql/insert_data.sql
+            splitStatements: true
+            stripComments: true

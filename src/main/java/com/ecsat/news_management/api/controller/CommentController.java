@@ -1,4 +1,4 @@
-package com.ecsat.news_management.api.controllers;
+package com.ecsat.news_management.api.controller;
 
 import com.ecsat.news_management.api.dto.comment.CommentDTO;
 import com.ecsat.news_management.api.dto.comment.SaveCommentDTO;
@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/news/{newsId}/comments")
 public class CommentController {
+
 
     @GetMapping("/{commentsId}")
     public CommentDTO get(
