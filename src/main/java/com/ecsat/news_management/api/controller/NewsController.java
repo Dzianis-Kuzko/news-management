@@ -30,7 +30,8 @@ public class NewsController {
 
     @PostMapping
     public NewsDTO create(@RequestBody SaveNewsDTO saveNewsDTO) {
-        return new NewsDTO();
+
+        return newsService.create(saveNewsDTO);
     }
 
     @PutMapping("/{newsId}")
