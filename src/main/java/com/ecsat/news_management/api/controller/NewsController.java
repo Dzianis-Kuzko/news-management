@@ -30,14 +30,13 @@ public class NewsController {
 
     @PostMapping
     public NewsDTO create(@RequestBody SaveNewsDTO saveNewsDTO) {
-
         return newsService.create(saveNewsDTO);
     }
 
     @PutMapping("/{newsId}")
-    public NewsDTO update(@PathVariable int newsID,
+    public NewsDTO update(@PathVariable Integer newsId,
                           @RequestBody SaveNewsDTO saveNewsDTO) {
-        return new NewsDTO();
+        return newsService.update(newsId, saveNewsDTO);
     }
 
     @DeleteMapping("/{newsId}")

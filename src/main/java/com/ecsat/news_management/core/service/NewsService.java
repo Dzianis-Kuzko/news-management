@@ -9,6 +9,7 @@ import com.ecsat.news_management.core.repository.NewsRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -32,5 +33,18 @@ public class NewsService {
         News savedNews = newsRepository.save(news);
 
         return newsMapper.toNewsDTO(savedNews);
+    }
+
+
+    @Transactional
+    public NewsDTO update(Integer newsId, SaveNewsDTO saveNewsDTO) {
+        News news = newsRepository.findById(newsId)
+                .orElseThrow(() -> new NewsNotFoundException(newsId));
+
+        newsMapper.updateNewsFromSaveNewsDTO(saveNewsDTO, news);
+
+        News updatedNews = newsRepository.save(news);
+
+        return newsMapper.toNewsDTO(updatedNews);
     }
 }
